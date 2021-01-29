@@ -1,0 +1,18 @@
+<table class="table  table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Year</th>
+            <th scope="col">Month</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let table of table2;let i=index">
+        <tr *ngIf="table2[i].year==filteredYear || table2[i].month==filteredMonth">
+                <td>{{table.year}}</td>
+                <td>{{table.month}}</td>
+                <td>{{table.price}}</td>
+        </tr>
+    </ng-container>
+    </tbody>
+</table>

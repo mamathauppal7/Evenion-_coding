@@ -1,0 +1,37 @@
+<app-header></app-header>
+<center>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <select id="year" name="year" class="form-control" style="width:200px;" (change)=onSelectedYear($event.target.value)>
+                <option selected disabled>Year</option>
+                <option value={{year}}  *ngFor="let year of year">
+                    {{year}}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="col-xs-2">
+        <div class="form-group">
+            <select id="month" name="month" class="form-control" style="width:200px;" (change)="onSelectedMonth($event.target.value)">
+                <option selected disabled>Month</option>
+                <option value={{month}} *ngFor="let month of month">
+                    {{month}}
+                </option>
+            </select>
+        </div>
+    </div>
+</div>
+</center>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <label>Table 1</label>
+            <app-table1 [filteredYear]="selectedYear" [filteredMonth]="selectedMonth"></app-table1>
+        </div>
+        <div class="col-md-7">
+            <label>Table 2</label>
+            <app-table2 [filteredYear]="selectedYear" [filteredMonth]="selectedMonth"></app-table2>
+        </div>
+    </div>
+</div>
